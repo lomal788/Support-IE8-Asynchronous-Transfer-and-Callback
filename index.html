@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+frmfile.reset();
+		var frmfile= document.getElementById("frmfile");
+		frmfile.action = "URL";
+		frmfile.target = "dummy";
+		frmfile.method = "POST";
+		
+			    jQuery("#dummy").off("load");
+				jQuery("#dummy").on("load", function() {
+					var res= jQuery(this).contents().find('body').html().toString();
+				    var jData = JSON.parse(res);
+
+
+		             jData = null;
+		             res = null;
+				});
+	 			frm.submit();
+</script>
+</head>
+<body>
+<iframe name="dummy" id="dummy" src="" height="0" width="0"></iframe>
+
+
+	<form id="frmfile" name="frmfile" method="post" enctype="multipart/form-data">
+		<input type="hidden" id="input" name="input">
+        </form>
+</body>
+</html>
